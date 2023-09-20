@@ -1,0 +1,11 @@
+type: marketplace
+title: Kampus
+language: English
+summary: Imagine that you find yourself at a school or university and the management
+  asks you to help develop a REST service that models the structure of the university
+  and provides a schedule of classes for a particular student on a particular day.
+programming_language: Kotlin
+content:
+  - Kampus
+environment_settings:
+  jvm_language_level: JDK_1_8
