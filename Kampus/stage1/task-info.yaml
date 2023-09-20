@@ -20,3 +20,7 @@ files:
     visible: false
   - name: assets/package.png
     visible: false
+  - name: assets/exclude.png
+    visible: true
+  - name: assets/gradle.png
+    visible: true

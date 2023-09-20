@@ -1,20 +1,27 @@
 ## Theory
 
-Since the tests are run from the top level of the project, for which your code is at a lower level, package conflicts
-may occur. To avoid these conflicts, use different names for packages in microservices, and also try to use different
-class names:
+When you submit a project stage for testing, the code you wrote runs as a subproject. This means that the root of the
+gradle build is actually higher than the directory where you write the code. Since you have to create a multimodule
+project, you need to consider several points in order for the project to launch successfully:
 
-![package](assets/package.png)
+1. You need to avoid package conflicts. To do this, use different names for packages in microservices, and also try to
+   use different class names:
+   ![package](assets/package.png)
+2. Also, keep in mind that the plugin `kotlin("jvm")` is already defined in the build script at the project test level.
+   Therefore, you don't need to write a version of this plugin in your build scripts:
+    ```kotlin
+    plugins {
+        kotlin("jvm") // no version
+        ...
+    }
+    ```
+3. You don't need to create a _settings.gradle.kts_ file, all subprojects will be loaded automatically
+4. After all, to successfully build a project in Idea, you need to exclude the created modules from gradle and run the gradle sync:
+   ![exclude](assets/exclude.png)
 
-Also, keep in mind that the plugin `kotlin("jvm")` is already defined in the build script at the project test level.
-Therefore, you don't need to write a version of this plugin in your build scripts:
+Example of correct gradle project configuration:
 
-```kotlin
-plugins {
-    kotlin("jvm") // no version
-    ...
-}
-```
+![gradle](assets/gradle.png)
 
 ## Description
 
@@ -39,7 +46,7 @@ At this stage, you need to create two Ktor services that will run on different p
 - **8001** for ScheduleService. When making a GET request to the endpoint "/", it should return the string "Hello from
   ScheduleService!".
 
-- Before running the tests, do not forget to start both servers so that they are accessible from the local network.
+- Before running the tests, do not forget to start both servers so that they are accessible from the localhost.
 
 ## Examples
 
