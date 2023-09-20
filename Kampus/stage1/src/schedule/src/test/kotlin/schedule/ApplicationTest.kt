@@ -1,4 +1,0 @@
-package schedule
-
-class ApplicationTest {
-}

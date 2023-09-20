@@ -1,0 +1,20 @@
+type: edu
+files:
+  - name: build.gradle.kts
+    visible: true
+  - name: gradle.properties
+    visible: true
+  - name: src/keep
+    visible: true
+  - name: assets/gradle.png
+    visible: false
+  - name: assets/exclude.png
+    visible: false
+  - name: assets/package.png
+    visible: false
+  - name: assets/student.png
+    visible: false
+  - name: assets/schedule.png
+    visible: false
+  - name: test/Tests.kt
+    visible: false

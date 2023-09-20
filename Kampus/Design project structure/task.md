@@ -16,7 +16,8 @@ project, you need to consider several points in order for the project to launch 
     }
     ```
 3. You don't need to create a _settings.gradle.kts_ file, all subprojects will be loaded automatically
-4. After all, to successfully build a project in Idea, you need to exclude the created modules from gradle and run the gradle sync:
+4. You need to create submodules in the _src_ folder
+5. After all, to successfully build a project in Idea, you need to exclude the created modules from gradle and run the gradle sync:
    ![exclude](assets/exclude.png)
 
 Example of correct gradle project configuration:

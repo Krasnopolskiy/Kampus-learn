@@ -1,9 +1,8 @@
 type: marketplace
 title: Kampus
 language: English
-summary: Imagine that you find yourself at a school or university and the management
-  asks you to help develop a REST service that models the structure of the university
-  and provides a schedule of classes for a particular student on a particular day.
+summary: The university wants to introduce a timetable service for the convenience of its students.
+  The director asked you to develop a REST API for this service.
 programming_language: Kotlin
 content:
   - Kampus

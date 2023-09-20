@@ -1,4 +1,0 @@
-package student
-
-class ApplicationTest {
-}
