@@ -4,7 +4,7 @@ files:
     visible: true
   - name: gradle.properties
     visible: true
-  - name: src/keep
+  - name: src/.keep
     visible: true
   - name: assets/gradle.png
     visible: false
@@ -16,5 +16,5 @@ files:
     visible: false
   - name: assets/schedule.png
     visible: false
-  - name: test/Tests.kt
+  - name: test/Test.kt
     visible: false
