@@ -1,4 +1,8 @@
 type: framework
 content:
   - Design project structure
-  - Deveop services
+  - Develop student service
+  - Develop schedule service
+  - Add validation
+  - Add logging
+  - Deploy with docker

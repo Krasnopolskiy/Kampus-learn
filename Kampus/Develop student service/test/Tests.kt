@@ -9,6 +9,7 @@ import kotlin.random.Random
 import kotlin.test.assertContains
 import kotlin.test.assertEquals
 
+
 @TestInstance(TestInstance.Lifecycle.PER_CLASS)
 class Test {
     private val baseUrl = "http://localhost:8000"
