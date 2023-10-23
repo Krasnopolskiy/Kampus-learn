@@ -1,48 +1,194 @@
+## Description
 
-This is a task description file.
-Its content will be displayed to a learner
-in the **Task Description** window.
+After we've planned how our project will be set up, we need to work on the part that helps students. We're going to
+focus on three main areas:
 
-It supports both Markdown and HTML.
-To toggle the format, you can rename **task.md**
-to **task.html**, or vice versa.
-The default task description format can be changed
-in **Preferences | Tools | Education**,
-but this will not affect any existing task description files.
+1. Let students sign up easily.
+2. Provide a way for them to fetch their personal information.
+3. Making it possible for them to join various groups.
 
-The following features are available in
-**task.md/task.html** which are specific to the JetBrains Academy plugin:
+This way, students can easily become part of the system, share who they are, and join different groups that interest
+them.
 
-- Hints can be added anywhere in the task text.
-  Type "hint" and press Tab.
-  Hints should be added to an empty line in the task text.
-  In hints you can use both HTML and Markdown.
-<div class="hint">
+## Objectives
 
-Text of your hint
+Implement the REST API with such endpoints:
 
-</div>
+1. `POST /students` - create a new student
+    - Request body:
+      ```json
+      {
+          "name": "str",
+          "email": "str"
+      }
+      ```
+    - Response body:
+      ```json
+      {
+          "id": "int",
+          "name": "str",
+          "email": "str"
+      }
+      ```
 
-- You may need to refer your learners to a particular lesson,
-task, or file. To achieve this, you can use the in-course links.
-Specify the path using the `[link_text](course://lesson1/task1/file1)` format.
+2. `GET /students` - list all students
+    - Response body:
+      ```json
+      [
+          {
+              "id": "int",
+              "name": "str",
+              "email": "str"
+          }
+      ]
+      ```
 
-- You can insert shortcuts in the task description.
-While **task.html/task.md** is open, right-click anywhere
-on the **Editor** tab and choose the **Insert shortcut** option
-from the context menu.
-For example: &shortcut:FileStructurePopup;.
+3. `GET /students/:id` - get detailed info about a student
+    - Response body:
+      ```json
+      {
+          "id": "int",
+          "name": "str",
+          "groups": [
+              {
+                  "id": "int",
+                  "name": "str"
+              }
+          ]
+      }
+      ```
 
-- Insert the &percnt;`IDE_NAME`&percnt; macro,
-which will be replaced by the actual IDE name.
-For example, **%IDE_NAME%**.
+4. `POST /groups` - create a new group
+    - Request body:
+      ```json
+      {
+          "name": "str"
+      }
+      ```
+    - Response body:
+      ```json
+      {
+          "id": "int",
+          "name": "str"
+      }
+      ```
 
-- Insert PSI elements, by using links like
-`[element_description](psi_element://link.to.element)`.
-To get such a link, right-click the class or method
-and select **Copy Reference**.
-Then press &shortcut:EditorPaste; to insert the link where appropriate.
-For example, a [link to the "contains" method](psi_element://java.lang.String#contains).
+5. `GET /groups` - list all groups
+    - Response body:
+      ```json
+      [
+          {
+              "id": "int",
+              "name": "str"
+          }
+      ]
+      ```
 
-- You can add link to file using **full path** like this:
-  `[file_link](file://lesson1/task1/file.txt)`.
+6. `POST /groups/:id/join` - add a student to the group members
+    - Request body:
+      ```json
+      {
+          "studentId": "int"
+      }
+      ```
+    - Response body:
+      ```json
+      {
+          "joined": true
+      }
+      ```
+
+## Examples
+
+<table>
+  <thead>
+    <tr>
+      <th>Endpoint</th>
+      <th>Request body</th>
+      <th>Response body</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code>POST 127.0.0.1:8000/students</code></td>
+      <td><pre><code class="language-json">{
+  "name": "John Doe",
+  "email": "john@mail.com"
+}</code></pre></td>
+      <td><pre><code class="language-json">{
+  "id": 1,
+  "name": "John Doe",
+  "email": "john@mail.com"
+}</code></pre></td>
+    </tr>
+    <tr>
+      <td><code>GET 127.0.0.1:8000/students</code></td>
+      <td>&nbsp;<br></td>
+      <td><pre><code class="language-json">[
+  {
+    "id": 0,
+    "name": "Onie",
+    "email": "quia@mail.com"
+  },
+  {
+    "id": 1,
+    "name": "John Doe",
+    "email": "john@mail.com"
+  },
+  {
+    "id": 2,
+    "name": "Bernice",
+    "email": "illo@mail.com"
+  }
+]</code></pre></td>
+    </tr>
+    <tr>
+      <td><code>GET 127.0.0.1:8000/students/1</code></td>
+      <td>&nbsp;<br></td>
+      <td><pre><code class="language-json">{
+  "id": 1,
+  "name": "John Doe",
+  "email": "john@mail.com",
+  "groups": [
+    {
+      "id": 1,
+      "name": "id-qui-voluptates"
+    }
+  ]
+}</code></pre></td>
+    </tr>
+    <tr>
+      <td><code>POST 127.0.0.1:8000/groups</code></td>
+      <td><pre><code class="language-json">{
+  "name": "id-qui-voluptates"
+}</code></pre></td>
+      <td><pre><code class="language-json">{
+  "id": 1,
+  "name": "id-qui-voluptates"
+}</code></pre></td>
+    </tr>
+    <tr>
+      <td><code>GET 127.0.0.1:8000/groups</code></td>
+      <td>&nbsp;<br></td>
+      <td><pre><code class="language-json">[
+  {
+    "id": 0,
+    "name": "eius-et-alias"
+  },
+  {
+    "id": 1,
+    "name": "id-qui-voluptates"
+  }
+]</code></pre></td>
+    </tr>
+    <tr>
+      <td><code>POST 127.0.0.1:8000/groups/1/join</code></td>
+      <td><pre><code class="language-json">{
+  "studentId": 1
+}</code></pre></td>
+      <td><pre><code class="language-json">{
+  "joined": true
+}</code></pre></td>
+    </tr>
+  </tbody>
+</table>
