@@ -6,7 +6,7 @@ files:
     visible: true
   - name: src/.keep
     visible: true
-  - name: test/Utils.kt
+  - name: test/AbstractTest.kt
     visible: false
   - name: test/TestScheduleService.kt
     visible: false

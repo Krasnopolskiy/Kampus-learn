@@ -6,5 +6,7 @@ files:
     visible: true
   - name: src/.keep
     visible: true
-  - name: test/Tests.kt
+  - name: test/AbstractTest.kt
+    visible: false
+  - name: test/TestStudentService.kt
     visible: false
