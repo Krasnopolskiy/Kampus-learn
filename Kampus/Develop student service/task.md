@@ -123,7 +123,7 @@ Implement the REST API with such endpoints:
     </tr>
     <tr>
       <td><code>GET 127.0.0.1:8000/students</code></td>
-      <td>&nbsp;<br></td>
+      <td> <br></td>
       <td><pre><code class="language-json">[
   {
     "id": 0,
@@ -144,7 +144,7 @@ Implement the REST API with such endpoints:
     </tr>
     <tr>
       <td><code>GET 127.0.0.1:8000/students/1</code></td>
-      <td>&nbsp;<br></td>
+      <td> <br></td>
       <td><pre><code class="language-json">{
   "id": 1,
   "name": "John Doe",
@@ -169,7 +169,7 @@ Implement the REST API with such endpoints:
     </tr>
     <tr>
       <td><code>GET 127.0.0.1:8000/groups</code></td>
-      <td>&nbsp;<br></td>
+      <td> <br></td>
       <td><pre><code class="language-json">[
   {
     "id": 0,
