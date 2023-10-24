@@ -58,11 +58,11 @@ Implement the REST API with such endpoints:
 			<td>Response body</td>
 		</tr>
 		<tr>
-			<td>POST 127.0.0.1:8001/lessons</td>
+			<td><code>POST 127.0.0.1:8001/lessons</code></td>
 			<td>
 				<pre>
 <code class="language-json">{
-    "name": "Lesson",&nbsp;
+    "name": "Lesson", 
     "groupIds": [1, 2]
 }</code>
 				</pre>
@@ -70,40 +70,40 @@ Implement the REST API with such endpoints:
 			<td>
 				<pre>
 <code class="language-json">{
-    "id": 1,&nbsp;
-    "name": "Lesson",&nbsp;
-    "groups": [&nbsp;
-        {&nbsp;
-            "id": 1,&nbsp;
-            "name": "id-qui-voluptates"&nbsp;
-        },&nbsp;
-        {&nbsp;
-            "id": 2,&nbsp;
-            "name": "repudiandae-neque-est"&nbsp;
-        }&nbsp;
-    ]&nbsp;
+    "id": 1, 
+    "name": "Lesson", 
+    "groups": [ 
+        { 
+            "id": 1, 
+            "name": "id-qui-voluptates" 
+        }, 
+        { 
+            "id": 2, 
+            "name": "repudiandae-neque-est" 
+        } 
+    ] 
 }</code>
 				</pre>
 			</td>
 		</tr>
 		<tr>
-			<td>GET 127.0.0.1:8001/lessons/1</td>
-			<td>&nbsp;</td>
+			<td><code>GET 127.0.0.1:8001/lessons/1</code></td>
+			<td> </td>
 			<td>
 				<pre>
 <code class="language-json">{
-    "id": 1,&nbsp;
-    "name": "Lesson",&nbsp;
-    "groups": [&nbsp;
-        {&nbsp;
-            "id": 1,&nbsp;
-            "name": "id-qui-voluptates"&nbsp;
-        },&nbsp;
-        {&nbsp;
-            "id": 2,&nbsp;
-            "name": "repudiandae-neque-est"&nbsp;
-        }&nbsp;
-    ]&nbsp;
+    "id": 1, 
+    "name": "Lesson", 
+    "groups": [ 
+        { 
+            "id": 1, 
+            "name": "id-qui-voluptates" 
+        }, 
+        { 
+            "id": 2, 
+            "name": "repudiandae-neque-est" 
+        } 
+    ] 
 }</code>
 				</pre>
 			</td>

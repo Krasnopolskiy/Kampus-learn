@@ -1,48 +1,57 @@
+## Description
 
-This is a task description file.
-Its content will be displayed to a learner
-in the **Task Description** window.
+After we have implemented the services, we need to configure user input validation. To do this, we need to validate the
+following parameters:
 
-It supports both Markdown and HTML.
-To toggle the format, you can rename **task.md**
-to **task.html**, or vice versa.
-The default task description format can be changed
-in **Preferences | Tools | Education**,
-but this will not affect any existing task description files.
+1. Path parameters for endpoints
+2. Request body sent by the user
+3. Requests to non-existent resources
 
-The following features are available in
-**task.md/task.html** which are specific to the JetBrains Academy plugin:
+## Objectives
 
-- Hints can be added anywhere in the task text.
-  Type "hint" and press Tab.
-  Hints should be added to an empty line in the task text.
-  In hints you can use both HTML and Markdown.
-<div class="hint">
+Add the following checks to the project:
 
-Text of your hint
+1. The name of the user, group, and lesson cannot be empty.
+2. The user's email cannot be empty.
+3. If an incorrect data type is passed as a path parameter or in the request body, the service should return the
+   status `400 Bad Request` with a message indicating an error. You can describe the message at your want.
+4. If a user requests a resource that does not exist, the service should return the `404 Not Found` status with a
+   message indicating an error. You can describe the message at your want.
 
-</div>
+## Examples
 
-- You may need to refer your learners to a particular lesson,
-task, or file. To achieve this, you can use the in-course links.
-Specify the path using the `[link_text](course://lesson1/task1/file1)` format.
-
-- You can insert shortcuts in the task description.
-While **task.html/task.md** is open, right-click anywhere
-on the **Editor** tab and choose the **Insert shortcut** option
-from the context menu.
-For example: &shortcut:FileStructurePopup;.
-
-- Insert the &percnt;`IDE_NAME`&percnt; macro,
-which will be replaced by the actual IDE name.
-For example, **%IDE_NAME%**.
-
-- Insert PSI elements, by using links like
-`[element_description](psi_element://link.to.element)`.
-To get such a link, right-click the class or method
-and select **Copy Reference**.
-Then press &shortcut:EditorPaste; to insert the link where appropriate.
-For example, a [link to the "contains" method](psi_element://java.lang.String#contains).
-
-- You can add link to file using **full path** like this:
-  `[file_link](file://lesson1/task1/file.txt)`.
+<table>
+    <tr>
+        <th>Endpoint</th>
+        <th>Request body</th>
+        <th>Response body</th>
+    </tr>
+    <tr>
+        <td><code>POST 127.0.0.1:8000/students</code></td>
+        <td>
+            <pre>
+<code class="language-json">{
+     "name": "",
+     "email": "john@mail.com"
+}</code></pre>
+        </td>
+        <td>
+            <code>400 Bad Request</code><br>
+            <pre>
+<code class="language-json">{
+     "message": "Student name cannot be empty"
+}</code></pre>
+        </td>
+    </tr>
+    <tr>
+        <td><code>GET 127.0.0.1:8000/students/999</code></td>
+        <td></td>
+        <td>
+            <code>404 Not Found</code><br>
+            <pre>
+<code class="language-json">{
+     "message": "Resource not found"
+}</code></pre>
+        </td>
+    </tr>
+</table>

@@ -1,48 +1,31 @@
+## Description
 
-This is a task description file.
-Its content will be displayed to a learner
-in the **Task Description** window.
+In addition to the business logic of the service, we need to implement a system to monitor the state of the system. To
+do this, we implement logging. To make the system more transparent, we will also log the request id, which we will
+receive from the header.
 
-It supports both Markdown and HTML.
-To toggle the format, you can rename **task.md**
-to **task.html**, or vice versa.
-The default task description format can be changed
-in **Preferences | Tools | Education**,
-but this will not affect any existing task description files.
+## Objectives
 
-The following features are available in
-**task.md/task.html** which are specific to the JetBrains Academy plugin:
+Implement logging in the student service and schedule service to a file in the format:
 
-- Hints can be added anywhere in the task text.
-  Type "hint" and press Tab.
-  Hints should be added to an empty line in the task text.
-  In hints you can use both HTML and Markdown.
-<div class="hint">
+```text
+%d{YYYY-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n
+```
 
-Text of your hint
+Http request logs must contain the request id, which is passed in the `Request-Id` header, the request path and the user
+ip in format:
 
-</div>
+```text
+Request [%requestId%] from [%userIp%] to the path: [%endpoint%]
+```
 
-- You may need to refer your learners to a particular lesson,
-task, or file. To achieve this, you can use the in-course links.
-Specify the path using the `[link_text](course://lesson1/task1/file1)` format.
+Also implement an endpoint in each service to get the latest logs as is: `GET /logs`
 
-- You can insert shortcuts in the task description.
-While **task.html/task.md** is open, right-click anywhere
-on the **Editor** tab and choose the **Insert shortcut** option
-from the context menu.
-For example: &shortcut:FileStructurePopup;.
+## Examples
 
-- Insert the &percnt;`IDE_NAME`&percnt; macro,
-which will be replaced by the actual IDE name.
-For example, **%IDE_NAME%**.
+`GET 127.0.0.1:8000/logs`
 
-- Insert PSI elements, by using links like
-`[element_description](psi_element://link.to.element)`.
-To get such a link, right-click the class or method
-and select **Copy Reference**.
-Then press &shortcut:EditorPaste; to insert the link where appropriate.
-For example, a [link to the "contains" method](psi_element://java.lang.String#contains).
-
-- You can add link to file using **full path** like this:
-  `[file_link](file://lesson1/task1/file.txt)`.
+```text
+2023-10-22 12:00:00.000 [eventLoopGroupProxy-4-1] INFO Application - Request [4495eafa-9e43-40b9-ba92-131e1777a53f] from [127.0.0.1] to the path: [/students]
+2023-10-22 12:00:01.000 [eventLoopGroupProxy-4-1] INFO Application - Request [4495eafa-9e43-40b9-ba92-131e1777a53f] from [127.0.0.1] to the path: [/students/1]
+```
