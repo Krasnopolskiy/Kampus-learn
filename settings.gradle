@@ -5,6 +5,17 @@ pluginManagement {
     }
 }
 
+buildscript {
+    repositories {
+        maven { url 'https://packages.jetbrains.team/maven/p/hyperskill-hs-test/maven' }
+        maven { url 'https://jitpack.io' }
+    }
+
+    dependencies {
+        classpath "com.github.hyperskill:hs-gradle-plugin:release-SNAPSHOT"
+    }
+}
+
 static String sanitizeName(String name) {
     return name.replaceAll("[ /\\\\:<>\"?*|()]", "_").replaceAll("(^[.]+)|([.]+\$)", "")
 }

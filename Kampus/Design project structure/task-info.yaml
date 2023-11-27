@@ -1,7 +1,5 @@
 type: edu
 files:
-  - name: build.gradle.kts
-    visible: true
   - name: gradle.properties
     visible: true
   - name: src/.keep
@@ -18,3 +16,5 @@ files:
     visible: false
   - name: test/Test.kt
     visible: false
+  - name: build.gradle.kts
+    visible: true
