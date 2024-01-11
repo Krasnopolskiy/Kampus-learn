@@ -6,9 +6,107 @@ files:
     visible: true
   - name: src/.keep
     visible: true
-  - name: test/AbstractTest.kt
+  - name: src/main/kotlin/kampus/model/dto/group/JoinRequest.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/dto/group/GroupRequest.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/dto/group/JoinResponse.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/dto/group/GroupResponse.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/dto/lesson/LessonRequest.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/dto/lesson/LessonResponse.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/dto/student/StudentRequest.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/dto/student/StudentResponse.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/dto/student/StudentFullResponse.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/mapper/GroupMapper.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/mapper/LessonMapper.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/mapper/StudentMapper.kt
+    visible: true
+  - name: src/main/kotlin/kampus/config/KoinConfig.kt
+    visible: true
+  - name: src/main/kotlin/kampus/plugin/Koin.kt
+    visible: true
+  - name: src/main/kotlin/kampus/plugin/Routing.kt
+    visible: true
+  - name: src/main/kotlin/kampus/plugin/ContentNegotiation.kt
+    visible: true
+  - name: src/main/kotlin/kampus/service/impl/GroupServiceImpl.kt
+    visible: true
+  - name: src/main/kotlin/kampus/service/impl/LessonServiceImpl.kt
+    visible: true
+  - name: src/main/kotlin/kampus/service/impl/StudentServiceImpl.kt
+    visible: true
+  - name: src/main/kotlin/kampus/service/GroupService.kt
+    visible: true
+  - name: src/main/kotlin/kampus/service/LessonService.kt
+    visible: true
+  - name: src/main/kotlin/kampus/service/StudentService.kt
+    visible: true
+  - name: src/main/kotlin/kampus/database/entity/Group.kt
+    visible: true
+  - name: src/main/kotlin/kampus/database/entity/Lesson.kt
+    visible: true
+  - name: src/main/kotlin/kampus/database/entity/Student.kt
+    visible: true
+  - name: src/main/kotlin/kampus/database/entity/StudentGroup.kt
+    visible: true
+  - name: src/main/kotlin/kampus/controller/router/GroupRouting.kt
+    visible: true
+  - name: src/main/kotlin/kampus/controller/router/LessonRouting.kt
+    visible: true
+  - name: src/main/kotlin/kampus/controller/router/StudentRouting.kt
+    visible: true
+  - name: src/main/kotlin/kampus/controller/handler/impl/GroupHandlerImpl.kt
+    visible: true
+  - name: src/main/kotlin/kampus/controller/handler/impl/LessonHandlerImpl.kt
+    visible: true
+  - name: src/main/kotlin/kampus/controller/handler/impl/StudentHandlerImpl.kt
+    visible: true
+  - name: src/main/kotlin/kampus/controller/handler/GroupHandler.kt
+    visible: true
+  - name: src/main/kotlin/kampus/controller/handler/LessonHandler.kt
+    visible: true
+  - name: src/main/kotlin/kampus/controller/handler/StudentHandler.kt
+    visible: true
+  - name: src/main/kotlin/kampus/Application.kt
+    visible: true
+  - name: src/main/resources/logback.xml
+    visible: true
+  - name: src/main/resources/application.conf
+    visible: true
+  - name: src/main/kotlin/kampus/controller/exception/HandleException.kt
+    visible: true
+  - name: src/main/kotlin/kampus/controller/resource/Lessons.kt
+    visible: true
+  - name: src/main/kotlin/kampus/controller/resource/Students.kt
+    visible: true
+  - name: src/main/kotlin/kampus/controller/resource/Groups.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/validator/GroupValidator.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/validator/StudentValidator.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/validator/LessonValidator.kt
+    visible: true
+  - name: src/main/kotlin/kampus/plugin/RequestValidation.kt
+    visible: true
+  - name: src/main/kotlin/kampus/plugin/Resources.kt
+    visible: true
+  - name: src/main/kotlin/kampus/plugin/StatusPages.kt
+    visible: true
+  - name: src/main/kotlin/kampus/model/dto/ApiError.kt
+    visible: true
+  - name: test/KampusTest.kt
     visible: false
-  - name: test/TestScheduleService.kt
+  - name: test/ScheduleServiceTest.kt
     visible: false
-  - name: test/TestStudentService.kt
+  - name: test/StudentServiceTest.kt
     visible: false

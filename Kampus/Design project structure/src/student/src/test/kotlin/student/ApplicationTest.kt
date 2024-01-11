@@ -1,3 +1,0 @@
-package student
-
-class ApplicationTest

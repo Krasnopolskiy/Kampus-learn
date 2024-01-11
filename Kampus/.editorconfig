@@ -1,0 +1,18 @@
+root = true
+
+[*.{kt,kts,gradle.kts}]
+ktlint_code_style = ktlint_official
+ij_kotlin_allow_trailing_comma_on_call_site = true
+ij_kotlin_allow_trailing_comma = true
+end_of_line = lf
+insert_final_newline = true
+max_line_length = 120
+ktlint_no-wildcard-imports = disabled # looks like useless
+ktlint_import-ordering = false
+ij_kotlin_packages_to_use_import_on_demand = true # works
+ij_kotlin_imports_layout = ru.mephi.**, org.**, io.**, java.**, javax.**, kotlin.**, kotlinx.**, *, ^
+
+# Starting from ktlint 0.34.2 There is a problem with import "import-ordering" rule - ktlint contradicts
+# default AS import arrangement rules, so we have to disable ktlint it.
+# See https://github.com/pinterest/ktlint/issues/527
+# Since IDE complains about unknown `disabled_rules` key we have to disable it as well:

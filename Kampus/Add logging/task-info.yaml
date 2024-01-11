@@ -6,9 +6,15 @@ files:
     visible: true
   - name: src/.keep
     visible: true
-  - name: test/AbstractTest.kt
+  - name: test/KampusTest.kt
     visible: false
-  - name: test/TestScheduleService.kt
+  - name: test/ScheduleServiceTest.kt
     visible: false
-  - name: test/TestStudentService.kt
+  - name: test/StudentServiceTest.kt
+    visible: false
+  - name: test/ApplicationTest.kt
+    visible: false
+  - name: src/main/kotlin/kampus/controller/router/logRouting.kt
+    visible: false
+  - name: src/main/kotlin/kampus/plugin/СonfigureCallLogging.kt
     visible: false

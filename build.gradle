@@ -1,6 +1,6 @@
 buildscript {
-    ext.kotlin_version = '1.9.10'
-    ext.ktor_version = '2.3.4'
+    ext.kotlinVersion = '1.9.10'
+    ext.ktorVersion = '2.3.4'
     apply plugin: 'hyperskill'
 
     repositories {
@@ -8,13 +8,13 @@ buildscript {
     }
 
     dependencies {
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion"
     }
 }
 
 plugins {
-    id "io.ktor.plugin" version "$ktor_version"
-    id "org.jetbrains.kotlin.plugin.serialization" version "$kotlin_version"
+    id "io.ktor.plugin" version "$ktorVersion"
+    id "org.jetbrains.kotlin.plugin.serialization" version "$kotlinVersion"
 }
 
 repositories {
@@ -22,12 +22,12 @@ repositories {
 }
 
 dependencies {
-    implementation "io.ktor:ktor-server-core:$ktor_version"
-    implementation "io.ktor:ktor-server-netty:$ktor_version"
+    implementation "io.ktor:ktor-server-core:$ktorVersion"
+    implementation "io.ktor:ktor-server-netty:$ktorVersion"
 
     testImplementation "io.ktor:ktor-server-tests-jvm"
-    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlin_version"
-    testImplementation "io.ktor:ktor-client-mock:$ktor_version"
+    testImplementation "org.jetbrains.kotlin:kotlin-test-junit:$kotlinVersion"
+    testImplementation "io.ktor:ktor-client-mock:$ktorVersion"
 }
 
 def printOutput(def output) {

@@ -2,8 +2,6 @@ type: edu
 files:
   - name: gradle.properties
     visible: true
-  - name: src/.keep
-    visible: true
   - name: assets/gradle.png
     visible: false
   - name: assets/exclude.png
@@ -14,7 +12,21 @@ files:
     visible: false
   - name: assets/schedule.png
     visible: false
-  - name: test/Test.kt
-    visible: false
   - name: build.gradle.kts
     visible: true
+  - name: src/main/kotlin/kampus/plugin/Routing.kt
+    visible: false
+  - name: src/main/kotlin/kampus/Application.kt
+    visible: false
+  - name: src/main/resources/logback.xml
+    visible: false
+  - name: src/main/resources/application.conf
+    visible: false
+  - name: src/main/kotlin/kampus/controller/router/StudentRouting.kt
+    visible: false
+  - name: src/main/kotlin/kampus/controller/router/ScheduleRouting.kt
+    visible: false
+  - name: test/ApplicationTest.kt
+    visible: false
+  - name: test/KampusTest.kt
+    visible: false
